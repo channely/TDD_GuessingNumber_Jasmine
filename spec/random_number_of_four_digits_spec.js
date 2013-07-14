@@ -8,25 +8,9 @@ describe('lay out a random number',function(){
         expect(random_num1==random_num2).toBeFalsy();
     });
     it('it shouldn not have two same numbers within it',function(){
-        var total_exptected_number_count=0;
-        for(k=0;k<1000;k++){
-            var random_num=random_a_num();
-            if(is_four_digit_different(random_num)) {
-               total_exptected_number_count++;
-            }
-        }
-        expect(total_exptected_number_count).toEqual(1000);
+        expect(it_can_create_a_random_num_is).toBeTruthy();
     });
-
-    function is_four_digit_different(number) {
-        var same_counter=0;
-        for(i=0;i<4;i++){
-            for(j=0;j<4;j++){
-                if(number.charAt(i)==number.charAt(j)){
-                    same_counter++;
-                }
-            }
-        }
-        return same_counter==4;
-    }
+    it('it shouldn not be 0 on first digit',function(){
+        expect(it_is_0_the_first_digit_of(random_a_num())).toBeFalsy()
+    });
 });
